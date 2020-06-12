@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document Prime Generator</title>
+</head>
+<style>
+th, td {
+    border: 1px solid black;
+}
+</style>
+<body>
+    <h1>Generator Bilangan Prima</h1>
+    <table id="mater">
+        <tr>
+            <td>
+                <h2>Sifat Bilangan Prima</h2>
+                <p>Untuk mengetahui apakah suatu bilangan termasuk prima atau bukan, maka kita perlu mengetahui sifat-sifatnya.</p>
+                <p><ol>
+                    <li>
+                            Lebih dari angka 1
+                    </li>
+                    <li>
+                            Tidak Dapat Dibagi Oleh Bilangan Lain kecuali 2
+                    </li>
+                </ol>
+                   
+                   
+                    <ul><li>
+                            Bilangan 1
+                    </li>
+                <li>Bilangan itu sendiri</li></ul>
+                   
+                   
+                   </p>
+            </td>
+        </tr>
+    </table>
+    <table id="inputku">
+        <tr>
+            <td>Angka Pertama</td>
+            <td><input type="text" name="" id="angkaPertama"></td>
+        </tr>
+        <tr>
+            <td>Angka Terakhir</td>
+            <td><input type="text" name="" id="angkaTerakhir"></td>
+        </tr>
+        <tr>
+           
+            <td></td>
+            <td><button onclick="proses()" id="btnGenerate">Generate</button></td>
+        </tr>
+    </table>
+    <hr>
+    <table id="hasilGenerate">
+        <tr>
+            <th>Belum Ada Inputan</th>
+        </tr>
+       
+    </table>
+    <script>
+    var Wadah = document.getElementById('hasilGenerate');
+    var inSatu = document.getElementById('angkaPertama').value;
+    var inDua = document.getElementById('angkaTerakhir').value;
+    //deklarasi array kosong
+    var myData = [];  
+   
+    function proses(){
+       
+        for(var i = inSatu ; i < inDua ; i++){
+            //cek bilangan prima tidak ada yg lebih kecil dari 2
+           if(i < 2){
+               continue;
+           }
+       
+           if(test_prime(i) == false){
+               continue;
+           }
+           else {
+               myData.push(i);
+           }
+           
+        }
+     
+      //  console.log('data hasil : ');
+        //console.log(myData);
+        //console.log(myData.length);
+        dataToTable(myData);
+       
+    }
+    function dataToTable(dataNya){
+        var panjang = dataNya.length;
+        var Wadah = document.getElementById('hasilGenerate');
+        var heading = Wadah.children[0].children[0].children[0];
+        //console.log(heading);
+        heading.innerHTML = "Bilangan Prima Antara "+inSatu+" Dan "+inDua;
+        //console.log('tes');
+        //console.log(dataNya[2]);
+        for(var i=0; i < panjang;i++){
+            var tr = document.createElement('tr');
+            var isiKolom = dataNya[i];
+            var td = document.createElement('td');
+          //  console.log(isiKolom);
+            td.innerHTML = isiKolom;
+            tr.appendChild(td);
+            Wadah.appendChild(tr);
+        }
+       
+    }
+    function test_prime(n)
+    {
+        if (n===1)
+        {
+            return false;
+        }
+        else if(n === 2)
+        {
+            return true;
+        }else
+        {
+            for(var x = 2; x < n; x++)
+            {
+            if(n % x === 0)
+                {
+                    return false;
+                }
+            }
+            return true;  
+        }
+       
+    }
+    </script>
+</body>
+
+    </html>
+
+RAW Paste Data
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document Prime Generator</title>
+</head>
+<style>
+th, td {
+    border: 1px solid black;
+}
+</style>
+<body>
+    <h1>Generator Bilangan Prima</h1>
+    <table id="mater">
+        <tr>
+            <td>
+                <h2>Sifat Bilangan Prima</h2>
+                <p>Untuk mengetahui apakah suatu bilangan termasuk prima atau bukan, maka kita perlu mengetahui sifat-sifatnya.</p>
+                <p><ol>
+                    <li>
+                            Lebih dari angka 1 
+                    </li>
+                    <li>
+                            Tidak Dapat Dibagi Oleh Bilangan Lain kecuali 2
+                    </li>
+                </ol>
+                   
+                   
+                    <ul><li>
+                            Bilangan 1 
+                    </li>
+                <li>Bilangan itu sendiri</li></ul>
+                   
+                    
+                   </p>
+            </td>
+        </tr>
+    </table>
+    <table id="inputku">
+        <tr>
+            <td>Angka Pertama</td>
+            <td><input type="text" name="" id="angkaPertama"></td>
+        </tr>
+        <tr>
+            <td>Angka Terakhir</td>
+            <td><input type="text" name="" id="angkaTerakhir"></td>
+        </tr>
+        <tr>
+           
+            <td></td>
+            <td><button onclick="proses()" id="btnGenerate">Generate</button></td>
+        </tr>
+    </table>
+    <hr>
+    <table id="hasilGenerate">
+        <tr>
+            <th>Belum Ada Inputan</th>
+        </tr>
+       
+    </table>
+    <script>
+    var Wadah = document.getElementById('hasilGenerate');
+    var inSatu = document.getElementById('angkaPertama').value; 
+    var inDua = document.getElementById('angkaTerakhir').value; 
+    //deklarasi array kosong
+    var myData = [];  
+   
+    function proses(){
+        
+        for(var i = inSatu ; i < inDua ; i++){
+            //cek bilangan prima tidak ada yg lebih kecil dari 2
+           if(i < 2){
+               continue;
+           }
+        
+           if(test_prime(i) == false){
+               continue;
+           }
+           else {
+               myData.push(i);
+           } 
+           
+        }
+      
+      //  console.log('data hasil : ');
+        //console.log(myData);
+        //console.log(myData.length);
+        dataToTable(myData);
+        
+    }
+    function dataToTable(dataNya){
+        var panjang = dataNya.length;
+        var Wadah = document.getElementById('hasilGenerate');
+        var heading = Wadah.children[0].children[0].children[0];
+        //console.log(heading);
+        heading.innerHTML = "Bilangan Prima Antara "+inSatu+" Dan "+inDua;
+        //console.log('tes');
+        //console.log(dataNya[2]);
+        for(var i=0; i < panjang;i++){
+            var tr = document.createElement('tr');
+            var isiKolom = dataNya[i];
+            var td = document.createElement('td');
+          //  console.log(isiKolom);
+            td.innerHTML = isiKolom;
+            tr.appendChild(td);
+            Wadah.appendChild(tr);
+        }
+        
+    }
+    function test_prime(n)
+    {
+        if (n===1)
+        {
+            return false;
+        }
+        else if(n === 2)
+        {
+            return true;
+        }else
+        {
+            for(var x = 2; x < n; x++)
+            {
+            if(n % x === 0)
+                {
+                    return false;
+                }
+            }
+            return true;  
+        }
+        
+    }
+    </script>
+</body>
+</html>
+We use cookies for various purposes including analytics. By continuing to use Pastebin, you agree to our use of cookies as described in the Cookies Policy. OK, I Understand
+Not a member of Pastebin yet?
+Sign Up, it unlocks many cool features!
+ 
+create new paste  /  dealsnew!  /  syntax languages  /  archive  /  faq  /  tools  /  night mode  /  api /  scraping api
+privacy statement  /  cookies policy  /  terms of service  /  security disclosure  /  dmca  /  contact
+
+By using Pastebin.com you agree to our cookies policy to enhance your experience.
+Site design & logo © 2020 Pastebin; user contributions (pastes) licensed under cc by-sa 3.0 Dedicated Server Hosting by Steadfast
+Top
